@@ -16,7 +16,7 @@ struct API{
         let URL  = ""
         let header : HTTPHeaders = [ "" : ""]
 
-        let dataRequest = AF.request(URL, method: .get, parameters: param, encoding: URLEncoding.queryString, headers: header)
+        let dataRequest = AF.request(URL, method: .get, parameters: param, encoding: JSONEncoding.default, headers: header)
         
         dataRequest.responseData { dataResponse in
             switch dataResponse.result{
