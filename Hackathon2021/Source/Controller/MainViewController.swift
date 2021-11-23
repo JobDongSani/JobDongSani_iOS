@@ -5,4 +5,12 @@
 //  Created by Ji-hoon Ahn on 2021/11/21.
 //
 
-import Foundation
+import UIKit
+
+class MainViewController : BaseVc{
+    
+    override func configure() {
+        super.configure()
+    }
+    
+}
