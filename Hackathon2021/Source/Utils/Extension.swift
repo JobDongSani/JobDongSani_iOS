@@ -7,6 +7,42 @@
 
 import UIKit
 
+private let standard: CGFloat = 375
+private let bound = UIScreen.main.bounds
+
+extension UILabel {
+    func dynamicFont(fontSize size: CGFloat, fontName: String = "AppleSDGothicNeo-Regular", textStyle: UIFont.TextStyle = .body){
+        let resize = bound.width * (size/standard)
+        let f = UIFont(name: fontName, size: resize)!
+        self.adjustsFontForContentSizeCategory = true
+        self.font = UIFontMetrics(forTextStyle: textStyle).scaledFont(for: f)
+    }
+}
+extension UITextField {
+    func dynamicFont(fontSize size: CGFloat, fontName: String = "AppleSDGothicNeo-Regular", textStyle: UIFont.TextStyle = .body){
+        let resize = bound.width * (size/standard)
+        let f = UIFont(name: fontName, size: resize)!
+        self.adjustsFontForContentSizeCategory = true
+        self.font = UIFontMetrics(forTextStyle: textStyle).scaledFont(for: f)
+    }
+}
+extension UITextView {
+    func dynamicFont(fontSize size: CGFloat, fontName: String = "AppleSDGothicNeo-Regular", textStyle: UIFont.TextStyle = .body){
+        let resize = bound.width * (size/standard)
+        let f = UIFont(name: fontName, size: resize)!
+        self.adjustsFontForContentSizeCategory = true
+        self.font = UIFontMetrics(forTextStyle: textStyle).scaledFont(for: f)
+    }
+}
+extension UIButton {
+    func dynamicFont(fontSize size: CGFloat, fontName: String = "AppleSDGothicNeo-Regular", textStyle: UIFont.TextStyle = .body){
+        let resize = bound.width * (size/standard)
+        let f = UIFont(name: fontName, size: resize)!
+        self.titleLabel?.adjustsFontForContentSizeCategory = true
+        self.titleLabel?.font = UIFontMetrics(forTextStyle: textStyle).scaledFont(for: f)
+    }
+}
+
 //MARK: - Color
 extension UIColor{
     static func rgb(red: CGFloat ,green: CGFloat,blue:CGFloat) -> UIColor{
