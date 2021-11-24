@@ -11,7 +11,7 @@ private let standard: CGFloat = 375
 private let bound = UIScreen.main.bounds
 
 extension UILabel {
-    func dynamicFont(fontSize size: CGFloat, fontName: String = "AppleSDGothicNeo-Regular", textStyle: UIFont.TextStyle = .body){
+    func dynamicFont(fontSize size: CGFloat, fontName: String , textStyle: UIFont.TextStyle = .body){
         let resize = bound.width * (size/standard)
         let f = UIFont(name: fontName, size: resize)!
         self.adjustsFontForContentSizeCategory = true
@@ -19,7 +19,7 @@ extension UILabel {
     }
 }
 extension UITextField {
-    func dynamicFont(fontSize size: CGFloat, fontName: String = "AppleSDGothicNeo-Regular", textStyle: UIFont.TextStyle = .body){
+    func dynamicFont(fontSize size: CGFloat, fontName: String, textStyle: UIFont.TextStyle = .body){
         let resize = bound.width * (size/standard)
         let f = UIFont(name: fontName, size: resize)!
         self.adjustsFontForContentSizeCategory = true
@@ -27,7 +27,7 @@ extension UITextField {
     }
 }
 extension UITextView {
-    func dynamicFont(fontSize size: CGFloat, fontName: String = "AppleSDGothicNeo-Regular", textStyle: UIFont.TextStyle = .body){
+    func dynamicFont(fontSize size: CGFloat, fontName: String , textStyle: UIFont.TextStyle = .body){
         let resize = bound.width * (size/standard)
         let f = UIFont(name: fontName, size: resize)!
         self.adjustsFontForContentSizeCategory = true
@@ -35,11 +35,18 @@ extension UITextView {
     }
 }
 extension UIButton {
-    func dynamicFont(fontSize size: CGFloat, fontName: String = "AppleSDGothicNeo-Regular", textStyle: UIFont.TextStyle = .body){
+    func dynamicFont(fontSize size: CGFloat, fontName: String , textStyle: UIFont.TextStyle = .body){
         let resize = bound.width * (size/standard)
         let f = UIFont(name: fontName, size: resize)!
         self.titleLabel?.adjustsFontForContentSizeCategory = true
         self.titleLabel?.font = UIFontMetrics(forTextStyle: textStyle).scaledFont(for: f)
+    }
+}
+extension UIFont {
+    func dynamicFont(fontSize size : CGFloat, fontName : String ) -> UIFont{
+        let resize = bound.width * (size/standard)
+        let f = UIFont(name: fontName, size: resize)!
+        return f
     }
 }
 
@@ -51,7 +58,9 @@ extension UIColor{
     static func rgba(red: CGFloat ,green: CGFloat,blue:CGFloat, alpha:CGFloat) -> UIColor{
         return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: alpha)
     }
-    
+    static let JobDongSani_7471E7 = UIColor.rgb(red: 116, green: 113, blue: 231)
+    static let JobDongSani_7190FF = UIColor.rgb(red: 113, green: 144, blue: 255)
+    static let JobDongSani_868686 = UIColor.rgb(red: 134, green: 134, blue: 134)
 }
 
 // MARK: - view gradient color extension
