@@ -13,5 +13,6 @@ target 'Hackathon2021' do
 
   # Networking
   pod 'Alamofire', '~> 5.2'
+  pod 'KeychainSwift', '~> 19.0'
 
 end
