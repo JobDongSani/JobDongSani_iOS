@@ -11,8 +11,11 @@ import Then
 
 class LoginViewController : BaseVc{
     //MARK: - Properties
-    private let title = UILabel().then{
-        $0.
+    private let titleLabel = UILabel().then{
+        let string : NSMutableAttributedString = NSMutableAttributedString(string: "잡동사니 에  오신\n여러분 환영합니다!")
+        $0.textColor = .black
+        $0.numberOfLines = 2
+        string.setColor
     }
 
     //MARK: - Helper
