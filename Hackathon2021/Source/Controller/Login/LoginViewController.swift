@@ -45,7 +45,7 @@ class LoginViewController : BaseVc{
     @objc
     private func Login(){
         print("Login")
-        navigationController?.pushViewController(MainViewController(), animated: true)
+        navigationController?.pushViewController(TabbarViewController(), animated: true)
     }
     
     

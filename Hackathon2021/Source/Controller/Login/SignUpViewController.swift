@@ -55,11 +55,14 @@ class SignUpViewController :BaseVc {
     //MARK: - Helper
     override func configure() {
         super.configure()
+        addView()
+        location()
+        imagePickerSetting()
+    }
+    private func imagePickerSetting(){
         self.imagePicker.sourceType = .photoLibrary
         self.imagePicker.allowsEditing = true
         self.imagePicker.delegate = self
-        addView()
-        location()
     }
     private func addView(){
         [profile,stackView,joinBtn,alreadyAccoutBtn].forEach{ view.addSubview($0)}

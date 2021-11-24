@@ -32,6 +32,9 @@
 		EEBCCEC7274E5D18003B6054 /* CustomLoginBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEC6274E5D18003B6054 /* CustomLoginBtn.swift */; };
 		EEBCCEC9274E5FD0003B6054 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEC8274E5FD0003B6054 /* SignUpViewController.swift */; };
 		EEBCCECF274E6A11003B6054 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCECE274E6A11003B6054 /* TabbarViewController.swift */; };
+		EEBCCED2274E78AC003B6054 /* MainBulletInBoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCED1274E78AC003B6054 /* MainBulletInBoardTableViewCell.swift */; };
+		EEBCCED4274E7C2F003B6054 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCED3274E7C2F003B6054 /* ProfileViewController.swift */; };
+		EEBCCED6274E8C52003B6054 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCED5274E8C52003B6054 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		EEBCCEC6274E5D18003B6054 /* CustomLoginBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginBtn.swift; sourceTree = "<group>"; };
 		EEBCCEC8274E5FD0003B6054 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EEBCCECE274E6A11003B6054 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		EEBCCED1274E78AC003B6054 /* MainBulletInBoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBulletInBoardTableViewCell.swift; sourceTree = "<group>"; };
+		EEBCCED3274E7C2F003B6054 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		EEBCCED5274E8C52003B6054 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +226,7 @@
 		EE9FBB80274971AE00667B41 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EEBCCED0274E7883003B6054 /* TableViewCell */,
 				EEBCCEC4274E5926003B6054 /* CustomLoginTF.swift */,
 				EEBCCEC6274E5D18003B6054 /* CustomLoginBtn.swift */,
 			);
@@ -269,6 +276,8 @@
 			children = (
 				EEBCCECD274E6A01003B6054 /* ManagerTabbar */,
 				EE869E8A274A387600B2A169 /* MainViewController.swift */,
+				EEBCCED3274E7C2F003B6054 /* ProfileViewController.swift */,
+				EEBCCED5274E8C52003B6054 /* SearchViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -279,6 +288,14 @@
 				EEBCCECE274E6A11003B6054 /* TabbarViewController.swift */,
 			);
 			path = ManagerTabbar;
+			sourceTree = "<group>";
+		};
+		EEBCCED0274E7883003B6054 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EEBCCED1274E78AC003B6054 /* MainBulletInBoardTableViewCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,8 +422,11 @@
 				EEBCCE91274E2CA9003B6054 /* LoginViewController.swift in Sources */,
 				EE9FBB6327496ECA00667B41 /* AppDelegate.swift in Sources */,
 				EE869E89274A37B300B2A169 /* BaseVc.swift in Sources */,
+				EEBCCED6274E8C52003B6054 /* SearchViewController.swift in Sources */,
 				EEBCCEC5274E5926003B6054 /* CustomLoginTF.swift in Sources */,
 				EEAF534F274B0DAC0063D99A /* BaseModal.swift in Sources */,
+				EEBCCED4274E7C2F003B6054 /* ProfileViewController.swift in Sources */,
+				EEBCCED2274E78AC003B6054 /* MainBulletInBoardTableViewCell.swift in Sources */,
 				EE869E92274A39B200B2A169 /* Extension.swift in Sources */,
 				EE9FBB6527496ECA00667B41 /* SceneDelegate.swift in Sources */,
 				EE869E8D274A397700B2A169 /* BaseTableViewCell.swift in Sources */,
