@@ -9,12 +9,11 @@ import UIKit
 
 class TabbarViewController : UITabBarController{
     private let homeVc = MainViewController()
-    private let  searchVc = MainViewController()
+    private let  searchVc = SearchViewController()
     private let profileVC = ProfileViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         vcSetting()
     }
     private func vcSetting(){

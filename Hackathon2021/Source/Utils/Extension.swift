@@ -61,6 +61,7 @@ extension UIColor{
     static let JobDongSani_7471E7 = UIColor.rgb(red: 116, green: 113, blue: 231)
     static let JobDongSani_7190FF = UIColor.rgb(red: 113, green: 144, blue: 255)
     static let JobDongSani_868686 = UIColor.rgb(red: 134, green: 134, blue: 134)
+    static let JobDongSani_808080 = UIColor.rgb(red: 128, green: 128, blue: 128)
 }
 
 // MARK: - view gradient color extension

@@ -18,11 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         self.window = window
-        let mainViewController = LoginViewController()
+        let mainViewController = TabbarViewController()
         
         let navigationViewController = UINavigationController(rootViewController: mainViewController)
-        navigationViewController.navigationBar.isHidden = true
-        window.backgroundColor = .clear
+        window.backgroundColor = .white
         window.rootViewController = navigationViewController
         window.makeKeyAndVisible()
         for fontFaily in UIFont.familyNames{

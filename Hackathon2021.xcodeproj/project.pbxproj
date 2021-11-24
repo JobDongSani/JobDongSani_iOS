@@ -35,6 +35,9 @@
 		EEBCCED2274E78AC003B6054 /* MainBulletInBoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCED1274E78AC003B6054 /* MainBulletInBoardTableViewCell.swift */; };
 		EEBCCED4274E7C2F003B6054 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCED3274E7C2F003B6054 /* ProfileViewController.swift */; };
 		EEBCCED6274E8C52003B6054 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCED5274E8C52003B6054 /* SearchViewController.swift */; };
+		EEBCCED9274EA7DE003B6054 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCED8274EA7DE003B6054 /* DetailViewController.swift */; };
+		EEBCCEDB274EB223003B6054 /* dividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEDA274EB223003B6054 /* dividerView.swift */; };
+		EEBCCEDD274EF9CB003B6054 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEDC274EF9CB003B6054 /* ListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		EEBCCED1274E78AC003B6054 /* MainBulletInBoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBulletInBoardTableViewCell.swift; sourceTree = "<group>"; };
 		EEBCCED3274E7C2F003B6054 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EEBCCED5274E8C52003B6054 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		EEBCCED8274EA7DE003B6054 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		EEBCCEDA274EB223003B6054 /* dividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dividerView.swift; sourceTree = "<group>"; };
+		EEBCCEDC274EF9CB003B6054 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,7 @@
 			children = (
 				EEBCCECA274E619C003B6054 /* Login */,
 				EEBCCECB274E61A7003B6054 /* Main */,
+				EEBCCED7274EA7BF003B6054 /* Other */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -229,6 +236,7 @@
 				EEBCCED0274E7883003B6054 /* TableViewCell */,
 				EEBCCEC4274E5926003B6054 /* CustomLoginTF.swift */,
 				EEBCCEC6274E5D18003B6054 /* CustomLoginBtn.swift */,
+				EEBCCEDA274EB223003B6054 /* dividerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -294,8 +302,17 @@
 			isa = PBXGroup;
 			children = (
 				EEBCCED1274E78AC003B6054 /* MainBulletInBoardTableViewCell.swift */,
+				EEBCCEDC274EF9CB003B6054 /* ListTableViewCell.swift */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		EEBCCED7274EA7BF003B6054 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				EEBCCED8274EA7DE003B6054 /* DetailViewController.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,9 +442,12 @@
 				EEBCCED6274E8C52003B6054 /* SearchViewController.swift in Sources */,
 				EEBCCEC5274E5926003B6054 /* CustomLoginTF.swift in Sources */,
 				EEAF534F274B0DAC0063D99A /* BaseModal.swift in Sources */,
+				EEBCCED9274EA7DE003B6054 /* DetailViewController.swift in Sources */,
 				EEBCCED4274E7C2F003B6054 /* ProfileViewController.swift in Sources */,
 				EEBCCED2274E78AC003B6054 /* MainBulletInBoardTableViewCell.swift in Sources */,
 				EE869E92274A39B200B2A169 /* Extension.swift in Sources */,
+				EEBCCEDD274EF9CB003B6054 /* ListTableViewCell.swift in Sources */,
+				EEBCCEDB274EB223003B6054 /* dividerView.swift in Sources */,
 				EE9FBB6527496ECA00667B41 /* SceneDelegate.swift in Sources */,
 				EE869E8D274A397700B2A169 /* BaseTableViewCell.swift in Sources */,
 				EEAF534A274B0C7F0063D99A /* NetworkingStatus.swift in Sources */,

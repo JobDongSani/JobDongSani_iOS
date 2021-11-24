@@ -38,5 +38,7 @@ NotoSansKR-Black.otf
 			</array>
 		</dict>
 	</dict>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>
