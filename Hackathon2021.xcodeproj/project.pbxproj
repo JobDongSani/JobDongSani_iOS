@@ -21,6 +21,7 @@
 		EEAF534D274B0CA80063D99A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAF534C274B0CA80063D99A /* API.swift */; };
 		EEAF534F274B0DAC0063D99A /* BaseModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAF534E274B0DAC0063D99A /* BaseModal.swift */; };
 		EEBCCE8F274DB3F4003B6054 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCE8E274DB3F4003B6054 /* BaseURL.swift */; };
+		EEBCCE91274E2CA9003B6054 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCE90274E2CA9003B6054 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		EEAF534C274B0CA80063D99A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		EEAF534E274B0DAC0063D99A /* BaseModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModal.swift; sourceTree = "<group>"; };
 		EEBCCE8E274DB3F4003B6054 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		EEBCCE90274E2CA9003B6054 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				EE869E8A274A387600B2A169 /* MainViewController.swift */,
+				EEBCCE90274E2CA9003B6054 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEBCCE91274E2CA9003B6054 /* LoginViewController.swift in Sources */,
 				EE9FBB6327496ECA00667B41 /* AppDelegate.swift in Sources */,
 				EE869E89274A37B300B2A169 /* BaseVc.swift in Sources */,
 				EEAF534F274B0DAC0063D99A /* BaseModal.swift in Sources */,

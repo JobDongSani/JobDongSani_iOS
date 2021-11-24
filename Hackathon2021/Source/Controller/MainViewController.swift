@@ -8,7 +8,6 @@
 import UIKit
 
 class MainViewController : BaseVc{
-    
     override func configure() {
         super.configure()
     }
