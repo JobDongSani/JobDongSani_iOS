@@ -31,6 +31,7 @@
 		EEBCCEC5274E5926003B6054 /* CustomLoginTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEC4274E5926003B6054 /* CustomLoginTF.swift */; };
 		EEBCCEC7274E5D18003B6054 /* CustomLoginBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEC6274E5D18003B6054 /* CustomLoginBtn.swift */; };
 		EEBCCEC9274E5FD0003B6054 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEC8274E5FD0003B6054 /* SignUpViewController.swift */; };
+		EEBCCECF274E6A11003B6054 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCECE274E6A11003B6054 /* TabbarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		EEBCCEC4274E5926003B6054 /* CustomLoginTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginTF.swift; sourceTree = "<group>"; };
 		EEBCCEC6274E5D18003B6054 /* CustomLoginBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginBtn.swift; sourceTree = "<group>"; };
 		EEBCCEC8274E5FD0003B6054 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		EEBCCECE274E6A11003B6054 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,9 +267,18 @@
 		EEBCCECB274E61A7003B6054 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				EEBCCECD274E6A01003B6054 /* ManagerTabbar */,
 				EE869E8A274A387600B2A169 /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		EEBCCECD274E6A01003B6054 /* ManagerTabbar */ = {
+			isa = PBXGroup;
+			children = (
+				EEBCCECE274E6A11003B6054 /* TabbarViewController.swift */,
+			);
+			path = ManagerTabbar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,6 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEBCCECF274E6A11003B6054 /* TabbarViewController.swift in Sources */,
 				EEBCCE91274E2CA9003B6054 /* LoginViewController.swift in Sources */,
 				EE9FBB6327496ECA00667B41 /* AppDelegate.swift in Sources */,
 				EE869E89274A37B300B2A169 /* BaseVc.swift in Sources */,

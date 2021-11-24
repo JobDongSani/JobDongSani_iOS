@@ -30,6 +30,7 @@ class LoginViewController : BaseVc{
     
     private let loginBtn = CusomLoginBtn().then{
         $0.setTitle("LOGIN", for: .normal)
+        $0.addTarget(self, action: #selector(Login), for: .touchUpInside)
     }
     private let noUSerBtn = UIButton().then{
         $0.setTitle("아직회원이 아니신가요?", for: .normal)
@@ -41,7 +42,11 @@ class LoginViewController : BaseVc{
     private func noUser(){
         navigationController?.pushViewController(SignUpViewController(), animated: true)
     }
-    
+    @objc
+    private func Login(){
+        print("Login")
+        navigationController?.pushViewController(MainViewController(), animated: true)
+    }
     
     
     //MARK: - Helper

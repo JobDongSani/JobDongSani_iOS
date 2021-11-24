@@ -28,6 +28,7 @@ class SignUpViewController :BaseVc {
     }
     private let joinBtn = CusomLoginBtn().then{
         $0.setTitle("join", for: .normal)
+        $0.addTarget(self, action: #selector(join), for: .touchUpInside)
     }
     private let alreadyAccoutBtn = UIButton().then{
         $0.setTitle("이미 계정이 있으신가요?", for: .normal)
@@ -43,6 +44,10 @@ class SignUpViewController :BaseVc {
     }
     @objc
     private func alreadyAccount() {
+        navigationController?.popViewController(animated: true)
+    }
+    @objc
+    private func join(){
         navigationController?.popViewController(animated: true)
     }
     
@@ -80,7 +85,6 @@ class SignUpViewController :BaseVc {
             $0.centerX.equalToSuperview()
             $0.height.width.equalTo(alreadyAccoutBtn.titleLabel!)
         }
-
     }
 }
 extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
