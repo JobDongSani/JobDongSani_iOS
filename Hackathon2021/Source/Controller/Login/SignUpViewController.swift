@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Alamofire
 class SignUpViewController :BaseVc {
     //MARK: - Properties
     private let imagePicker = UIImagePickerController()
@@ -49,7 +49,7 @@ class SignUpViewController :BaseVc {
     }
     @objc
     private func join(){
-        navigationController?.popViewController(animated: true)
+        httpSignUp()
     }
     
     
@@ -94,6 +94,29 @@ class SignUpViewController :BaseVc {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
+    }
+    private func httpSignUp(){
+        let param : Parameters = [        "username": idTf.tf.text ?? "",
+                                          "password": passwordTf.tf.text ?? "",
+                                          "name": nameTf.tf.text ?? "",
+                                          "phoneNumber": phoneTf.tf.text ?? "",
+                                          "userImage": ""]
+        SignUpRequest.shared.Request(url: "/signup", method: .post, param: param, header:  nil, JSONDecodeUsingStatus: false) { (response) in
+            switch response{
+            case.success(let success):
+                print(success)
+                let controller =  LoginViewController()
+                self.navigationController?.popViewController(animated: true)
+            case .requestErr(let err):
+                print(err)
+            case.pathErr :
+                print("PathError")
+            case .serverErr:
+                print("ServerErr")
+            case .networkFail:
+                print("Network Fail")
+            }
+        }
     }
 }
 extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{

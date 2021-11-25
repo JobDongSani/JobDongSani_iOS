@@ -42,6 +42,9 @@
 		EEBCCEE4274F1788003B6054 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEE3274F1788003B6054 /* SearchTableViewCell.swift */; };
 		EEBCCEE7274F1C64003B6054 /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEE6274F1C64003B6054 /* BarcodeViewController.swift */; };
 		EEBCCEEA274F2604003B6054 /* AddBulletinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEE9274F2604003B6054 /* AddBulletinViewController.swift */; };
+		EEBCCEEF274F5598003B6054 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEEE274F5598003B6054 /* SignIn.swift */; };
+		EEBCCEF1274F5EAC003B6054 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEF0274F5EAC003B6054 /* SignUp.swift */; };
+		EEBCCEF3274F7C5B003B6054 /* TrashShareBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEF2274F7C5B003B6054 /* TrashShareBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +87,9 @@
 		EEBCCEE3274F1788003B6054 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		EEBCCEE6274F1C64003B6054 /* BarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 		EEBCCEE9274F2604003B6054 /* AddBulletinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBulletinViewController.swift; sourceTree = "<group>"; };
+		EEBCCEEE274F5598003B6054 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		EEBCCEF0274F5EAC003B6054 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		EEBCCEF2274F7C5B003B6054 /* TrashShareBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashShareBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,8 @@
 		EE869E83274A376B00B2A169 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EEBCCEF2274F7C5B003B6054 /* TrashShareBoard.swift */,
+				EEBCCEED274F5586003B6054 /* Sign */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -367,6 +375,15 @@
 			path = AddBoard;
 			sourceTree = "<group>";
 		};
+		EEBCCEED274F5586003B6054 /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				EEBCCEEE274F5598003B6054 /* SignIn.swift */,
+				EEBCCEF0274F5EAC003B6054 /* SignUp.swift */,
+			);
+			path = Sign;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -501,6 +518,7 @@
 				EEBCCED4274E7C2F003B6054 /* ProfileViewController.swift in Sources */,
 				EEBCCED2274E78AC003B6054 /* MainBulletInBoardTableViewCell.swift in Sources */,
 				EE869E92274A39B200B2A169 /* Extension.swift in Sources */,
+				EEBCCEF3274F7C5B003B6054 /* TrashShareBoard.swift in Sources */,
 				EEBCCEDD274EF9CB003B6054 /* ListTableViewCell.swift in Sources */,
 				EEBCCEDB274EB223003B6054 /* dividerView.swift in Sources */,
 				EE9FBB6527496ECA00667B41 /* SceneDelegate.swift in Sources */,
@@ -508,6 +526,8 @@
 				EEAF534A274B0C7F0063D99A /* NetworkingStatus.swift in Sources */,
 				EE869E8B274A387600B2A169 /* MainViewController.swift in Sources */,
 				EEAF534D274B0CA80063D99A /* API.swift in Sources */,
+				EEBCCEF1274F5EAC003B6054 /* SignUp.swift in Sources */,
+				EEBCCEEF274F5598003B6054 /* SignIn.swift in Sources */,
 				EEBCCEC9274E5FD0003B6054 /* SignUpViewController.swift in Sources */,
 				EEBCCEC7274E5D18003B6054 /* CustomLoginBtn.swift in Sources */,
 				EEBCCEE4274F1788003B6054 /* SearchTableViewCell.swift in Sources */,

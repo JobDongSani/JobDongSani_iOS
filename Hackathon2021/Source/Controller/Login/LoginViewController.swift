@@ -8,6 +8,8 @@
 import UIKit
 import SnapKit
 import Then
+import Alamofire
+import KeychainSwift
 
 class LoginViewController : BaseVc{
     //MARK: - Properties
@@ -46,7 +48,7 @@ class LoginViewController : BaseVc{
     @objc
     private func Login(){
         print("Login")
-        navigationController?.pushViewController(TabbarViewController(), animated: true)
+        LoginHttp()
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -82,7 +84,30 @@ class LoginViewController : BaseVc{
             $0.bottom.equalToSuperview().offset(bounds.height/10.5454 * -1)
             $0.centerX.equalToSuperview()
             $0.height.width.equalTo(noUSerBtn.titleLabel!)
-
+        }
+    }
+    private func LoginHttp(){
+        let param : Parameters = ["password": passwordTf.tf.text ?? "",
+                                  "username":  idTf.tf.text ?? ""]
+        SigninRequest.shared.Request(url: "/signin", method: .post, param: param, header: nil,  JSONDecodeUsingStatus: true) { (response) in
+            switch response{
+            case.success(let value):
+                print("\(value)")
+                if let data = value as? SigninModel{
+                    let keyChain = KeychainSwift()
+                    keyChain.set(data.data.accessToken, forKey: "token")
+                }
+                let controller = TabbarViewController()
+                self.navigationController?.pushViewController(controller, animated: true)
+            case .requestErr(let err):
+                print(err)
+            case.pathErr :
+                print("PathError")
+            case .serverErr:
+                print("ServerErr")
+            case .networkFail:
+                print("Network Fail")
+            }
         }
     }
 }

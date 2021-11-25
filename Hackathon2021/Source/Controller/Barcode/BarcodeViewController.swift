@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import Alamofire
 
 class BarcodeViewController: BaseVc{
     
@@ -176,12 +177,42 @@ extension BarcodeViewController : AVCaptureMetadataOutputObjectsDelegate{
             qrCodeFrameView?.frame = barCodeObject!.bounds
             //데이터 받음
             if metadataObj.stringValue != nil{
+                httpsSearch(String: metadataObj.stringValue!)
                 messageLabel.text = "검색완료"
                 noInfomation.isHidden = true
                 [itemName,itemType,recycleInformationLabel].forEach{ $0.isHidden = false}
                 print(metadataObj.stringValue ?? "")
+                captureSession.stopRunning()
             }
         }
     }
+    func httpsSearch(String : String){
+        let param : Parameters = ["query" : String]
+        let header : HTTPHeaders = ["X-Naver-Client-Id" : "DsBcMLHWPNapi7KAHO6C", "X-Naver-Client-Secret" : "yXi3ehMCIB"]
+        
+        let af  = AF.request("https://openapi.naver.com/v1/search/shop.json", method: .get, parameters: param, encoding: URLEncoding.default, headers:header)
+        af.responseData{ response in
+            switch response.result{
+            case .success(let success) :
+                print("성공 \(success)")
+                self.isBVaildData(success)
+            case.failure(let error):
+                print(error)
+            }
+        }
+    }
+    func isBVaildData(_ data : Data){
+        let decoder = JSONDecoder()
+        guard let dataDecoder = try? decoder.decode(barCodeSearch.self, from: data) else {return}
+        print(dataDecoder.items)
+        itemName.text = dataDecoder.items[0].title
+    }
     
+}
+
+class barCodeSearch: Codable{
+    let items : [itemsDocument]
+}
+struct itemsDocument: Codable{
+    let title : String
 }

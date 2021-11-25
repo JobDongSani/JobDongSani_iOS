@@ -10,23 +10,25 @@ import Alamofire
 import UIKit
 
 //MARK: - API Service !
-class API<T : Decodable>{
+class API<D : Decodable>{
 
     //MARK: - Request Method
     func Request(url : String ,method : HTTPMethod, param : Parameters?, header : HTTPHeaders?,JSONDecodeUsingStatus: Bool,completion: @escaping(NetworkResult<Any>) ->  Void){
-        let dataRequest = AF.request("\(BaseURL.baseURL)\(url)",
+        let dataRequest = AF.request("http://\(BaseURL.baseURL)\(url)",
                                      method: method,
                                      parameters: param,
                                      encoding: JSONEncoding.default,
                                      headers: header)
         
         dataRequest.responseJSON { (response) in
+            print("\(response.result)")
             switch response.result{
             case.success(let success):
                 NSLog("Success : \(success)")
                 guard let statusCode = response.response?.statusCode else {return}
-                guard let data = response.data else { return }
-                let networkResult = self.judgeStatus(by: statusCode, data, JSONDecodeUsingStatus)
+                print(statusCode)
+                guard let value = response.data else { return }
+                let networkResult = self.judgeStatus(by: statusCode, value, JSONDecodeUsingStatus)
                 completion(networkResult)
             case.failure(let err):
                 NSLog("Fail : \(err.localizedDescription)")
@@ -37,7 +39,8 @@ class API<T : Decodable>{
     //MARK: - Data Request Status
     private func judgeStatus(by  statusCode : Int, _ data : Data, _ JSONDecodeUsingStatus: Bool) -> NetworkResult<Any>{
         switch statusCode{
-        case 200 : return methodStatus( data: data, JSONDecodeUsingStatus: JSONDecodeUsingStatus)
+        case 200 :
+            return methodStatus( data: data, JSONDecodeUsingStatus: JSONDecodeUsingStatus)
         case 400: return .pathErr
         case 500: return .serverErr
         default: return .networkFail
@@ -48,14 +51,14 @@ class API<T : Decodable>{
         switch JSONDecodeUsingStatus{
         case true:
             return isValidData(data)
-        default:
+        case false:
             return .success(data)
         }
     }
     //MARK: - JSONDecoder
     private func isValidData(_ data : Data) -> NetworkResult<Any>{
         let decoder = JSONDecoder()
-        guard let dataDecoder = try? decoder.decode(T.self, from: data) else {return .pathErr}
+        guard let dataDecoder = try? decoder.decode(D.self, from: data) else {return .pathErr}
         print(dataDecoder)
         return .success(dataDecoder)
     }

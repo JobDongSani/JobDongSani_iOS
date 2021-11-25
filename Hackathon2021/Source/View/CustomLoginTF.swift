@@ -12,7 +12,7 @@ class CustomLoginTF : UIView{
         $0.textColor = .black
         $0.dynamicFont(fontSize: 10, fontName: "AppleSDGothicNeo-Light")
     }
-    private let tf = UITextField().then{
+     let tf = UITextField().then{
         $0.textColor = .black
         $0.dynamicFont(fontSize: 12, fontName: "AppleSDGothicNeo-SemiBold")
     }
