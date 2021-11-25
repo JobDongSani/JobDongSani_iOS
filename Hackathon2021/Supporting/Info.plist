@@ -2,6 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>카메라 접근을 동의하시나요</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NotoSansKR-Thin.otf</string>
+		<string>NotoSansKR-Black.otf
+NotoSansKR-Black.otf
+</string>
+		<string>NotoSansKR-Bold.otf
+</string>
+		<string>NotoSansKR-Light.otf
+</string>
+		<string>NotoSansKR-Medium.otf</string>
+		<string>NotoSansKR-Regular.otf
+</string>
+	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -24,5 +40,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

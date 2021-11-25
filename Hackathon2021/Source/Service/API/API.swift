@@ -61,4 +61,3 @@ class API<T : Decodable>{
     }
 }
 
-

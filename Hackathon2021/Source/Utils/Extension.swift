@@ -7,6 +7,49 @@
 
 import UIKit
 
+private let standard: CGFloat = 375
+private let bound = UIScreen.main.bounds
+
+extension UILabel {
+    func dynamicFont(fontSize size: CGFloat, fontName: String , textStyle: UIFont.TextStyle = .body){
+        let resize = bound.width * (size/standard)
+        let f = UIFont(name: fontName, size: resize)!
+        self.adjustsFontForContentSizeCategory = true
+        self.font = UIFontMetrics(forTextStyle: textStyle).scaledFont(for: f)
+    }
+}
+extension UITextField {
+    func dynamicFont(fontSize size: CGFloat, fontName: String, textStyle: UIFont.TextStyle = .body){
+        let resize = bound.width * (size/standard)
+        let f = UIFont(name: fontName, size: resize)!
+        self.adjustsFontForContentSizeCategory = true
+        self.font = UIFontMetrics(forTextStyle: textStyle).scaledFont(for: f)
+    }
+}
+extension UITextView {
+    func dynamicFont(fontSize size: CGFloat, fontName: String , textStyle: UIFont.TextStyle = .body){
+        let resize = bound.width * (size/standard)
+        let f = UIFont(name: fontName, size: resize)!
+        self.adjustsFontForContentSizeCategory = true
+        self.font = UIFontMetrics(forTextStyle: textStyle).scaledFont(for: f)
+    }
+}
+extension UIButton {
+    func dynamicFont(fontSize size: CGFloat, fontName: String , textStyle: UIFont.TextStyle = .body){
+        let resize = bound.width * (size/standard)
+        let f = UIFont(name: fontName, size: resize)!
+        self.titleLabel?.adjustsFontForContentSizeCategory = true
+        self.titleLabel?.font = UIFontMetrics(forTextStyle: textStyle).scaledFont(for: f)
+    }
+}
+extension UIFont {
+    func dynamicFont(fontSize size : CGFloat, fontName : String ) -> UIFont{
+        let resize = bound.width * (size/standard)
+        let f = UIFont(name: fontName, size: resize)!
+        return f
+    }
+}
+
 //MARK: - Color
 extension UIColor{
     static func rgb(red: CGFloat ,green: CGFloat,blue:CGFloat) -> UIColor{
@@ -15,7 +58,11 @@ extension UIColor{
     static func rgba(red: CGFloat ,green: CGFloat,blue:CGFloat, alpha:CGFloat) -> UIColor{
         return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: alpha)
     }
-    
+    static let JobDongSani_7471E7 = UIColor.rgb(red: 116, green: 113, blue: 231)
+    static let JobDongSani_7190FF = UIColor.rgb(red: 113, green: 144, blue: 255)
+    static let JobDongSani_868686 = UIColor.rgb(red: 134, green: 134, blue: 134)
+    static let JobDongSani_808080 = UIColor.rgb(red: 128, green: 128, blue: 128)
+    static let JobDongSani_F3F3F3 = UIColor.rgb(red: 243, green: 243, blue: 243)
 }
 
 // MARK: - view gradient color extension
@@ -107,5 +154,16 @@ func applySketchShadow(color: UIColor = .black,alpha: Float = 0.5,x:CGFloat,y:CG
             let rect = bounds.insetBy(dx: dx, dy: dx)
             shadowPath = UIBezierPath(rect: rect).cgPath
         }
+    }
+}
+extension NSMutableAttributedString {
+    func setColorForText(textToFind: String, withColor color: UIColor) {
+        let range: NSRange = self.mutableString.range(of: textToFind, options: .caseInsensitive)
+        self.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
+        }
+    func setFontForText(textToFind: String, withFont font: UIFont
+    ){
+        let range : NSRange = self.mutableString.range(of: textToFind,options: .caseInsensitive)
+        self.addAttribute(NSAttributedString.Key.font, value: font, range: range)
     }
 }
