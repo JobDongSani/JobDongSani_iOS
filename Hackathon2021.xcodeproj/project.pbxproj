@@ -41,6 +41,7 @@
 		EEBCCEE1274F1347003B6054 /* CustomSearchTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEE0274F1347003B6054 /* CustomSearchTF.swift */; };
 		EEBCCEE4274F1788003B6054 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEE3274F1788003B6054 /* SearchTableViewCell.swift */; };
 		EEBCCEE7274F1C64003B6054 /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEE6274F1C64003B6054 /* BarcodeViewController.swift */; };
+		EEBCCEEA274F2604003B6054 /* AddBulletinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEE9274F2604003B6054 /* AddBulletinViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		EEBCCEE0274F1347003B6054 /* CustomSearchTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchTF.swift; sourceTree = "<group>"; };
 		EEBCCEE3274F1788003B6054 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		EEBCCEE6274F1C64003B6054 /* BarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
+		EEBCCEE9274F2604003B6054 /* AddBulletinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBulletinViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		EE869E81274A374C00B2A169 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EEBCCEE8274F25DB003B6054 /* AddBoard */,
 				EEBCCEE5274F1B8D003B6054 /* Barcode */,
 				EEBCCECA274E619C003B6054 /* Login */,
 				EEBCCECB274E61A7003B6054 /* Main */,
@@ -356,6 +359,14 @@
 			path = Barcode;
 			sourceTree = "<group>";
 		};
+		EEBCCEE8274F25DB003B6054 /* AddBoard */ = {
+			isa = PBXGroup;
+			children = (
+				EEBCCEE9274F2604003B6054 /* AddBulletinViewController.swift */,
+			);
+			path = AddBoard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -483,6 +494,7 @@
 				EEBCCEE7274F1C64003B6054 /* BarcodeViewController.swift in Sources */,
 				EEBCCED6274E8C52003B6054 /* SearchViewController.swift in Sources */,
 				EEBCCEE1274F1347003B6054 /* CustomSearchTF.swift in Sources */,
+				EEBCCEEA274F2604003B6054 /* AddBulletinViewController.swift in Sources */,
 				EEBCCEC5274E5926003B6054 /* CustomLoginTF.swift in Sources */,
 				EEAF534F274B0DAC0063D99A /* BaseModal.swift in Sources */,
 				EEBCCED9274EA7DE003B6054 /* DetailViewController.swift in Sources */,

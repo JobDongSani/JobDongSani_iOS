@@ -24,17 +24,18 @@ class MainViewController : BaseVc{
         $0.backgroundColor = .systemBlue
         $0.setImage(UIImage(named: "JobDongSani_addBtn")?.withRenderingMode(.alwaysTemplate), for: .normal)
         $0.tintColor = .white
-        $0.addTarget(self, action: #selector(addBtnAction), for: .touchUpInside
-        )
+        $0.addTarget(self, action: #selector(addBtnAction), for: .touchUpInside)
         $0.clipsToBounds = true
     }
     @objc
     private func barCodePageMove(){
         print("barCodePage 이동")
+        navigationController?.pushViewController(BarcodeViewController(), animated: true)
     }
     @objc
-    private func addBtnAction(){
+    private func addBtnAction(){ 
         print("추가")
+        navigationController?.pushViewController(AddBulletinViewController(), animated: true)
     }
     //MARK: - Helper
     override func configure() {
@@ -46,6 +47,8 @@ class MainViewController : BaseVc{
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         addBtn.layer.cornerRadius = addBtn.frame.height/2
+        addBtn.layer.applySketchShadow(color: .black, alpha: 0.25, x: 1, y: 1, blur: 4, spread: 0)
+
     }
     private func addView(){
         [barCodePageBtn,bulletInBoardTableView,addBtn].forEach{view.addSubview($0)}

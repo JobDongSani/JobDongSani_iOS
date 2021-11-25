@@ -6,7 +6,14 @@
 //
 
 import UIKit
+import AVFoundation
 
-class BarcodeViewController{
+class BarcodeViewController: BaseVc{
+    
+    
+    
+    override func configure() {
+        super.configure()
+    }
     
 }

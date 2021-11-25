@@ -16,7 +16,7 @@ class CustomLoginTF : UIView{
         $0.textColor = .black
         $0.dynamicFont(fontSize: 12, fontName: "AppleSDGothicNeo-SemiBold")
     }
-    private let divider = UIView().then{
+     let divider = UIView().then{
         $0.backgroundColor = .JobDongSani_7190FF
     }
     init(type: String){

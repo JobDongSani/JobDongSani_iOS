@@ -13,6 +13,7 @@ class MainBulletInBoardTableViewCell : UITableViewCell{
     let iv = UIImageView().then{
         $0.contentMode = .scaleAspectFill
         $0.backgroundColor = .gray
+        $0.layer.cornerRadius = 10
         $0.clipsToBounds = true
     }
     let title = UILabel().then{
@@ -22,10 +23,12 @@ class MainBulletInBoardTableViewCell : UITableViewCell{
     }
     let writer = UILabel().then{
         $0.textColor = .black
+        $0.text = "황현빈"
         $0.dynamicFont(fontSize: 12, fontName: "AppleSDGothicNeo-Regular")
     }
     let locationSearch = UILabel().then{
         $0.textColor = .JobDongSani_808080
+        $0.text = "달성군 구지면"
         $0.dynamicFont(fontSize: 10, fontName: "AppleSDGothicNeo-Light")
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -48,7 +51,7 @@ class MainBulletInBoardTableViewCell : UITableViewCell{
         iv.snp.makeConstraints{
             $0.left.equalToSuperview().offset(20)
             $0.centerY.equalToSuperview()
-            $0.height.width.equalTo(contentView.snp.height).offset(11)
+            $0.height.width.equalTo(contentView.snp.height).inset(11)
         }
         title.snp.makeConstraints{
             $0.top.equalTo(iv)
