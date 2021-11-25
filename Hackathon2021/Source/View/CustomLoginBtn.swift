@@ -10,6 +10,7 @@ import UIKit
 class CusomLoginBtn : UIButton{
     override init(frame: CGRect) {
         super.init(frame: frame)
+        titleLabel?.dynamicFont(fontSize: 14, fontName: "AppleSDGothicNeo-Light")
         layer.cornerRadius = 10
         titleLabel?.textColor = .white
         backgroundColor = .JobDongSani_7190FF

@@ -33,6 +33,7 @@ class SignUpViewController :BaseVc {
     private let alreadyAccoutBtn = UIButton().then{
         $0.setTitle("이미 계정이 있으신가요?", for: .normal)
         $0.setTitleColor(.JobDongSani_868686, for: .normal)
+        $0.dynamicFont(fontSize: 10, fontName: "AppleSDGothicNeo-Light")
         $0.addTarget(self, action: #selector(alreadyAccount), for: .touchUpInside)
     }
     

@@ -10,9 +10,11 @@ import UIKit
 class CustomLoginTF : UIView{
     private let typeLabel = UILabel().then{
         $0.textColor = .black
+        $0.dynamicFont(fontSize: 10, fontName: "AppleSDGothicNeo-Light")
     }
     private let tf = UITextField().then{
         $0.textColor = .black
+        $0.dynamicFont(fontSize: 12, fontName: "AppleSDGothicNeo-SemiBold")
     }
     private let divider = UIView().then{
         $0.backgroundColor = .JobDongSani_7190FF

@@ -15,18 +15,22 @@ class ListTableViewCell: UITableViewCell{
     }
     let titleLabel = UILabel().then{
         $0.textColor = .black
+        $0.dynamicFont(fontSize: 14, fontName: "AppleSDGothicNeo-Light")
     }
     let dateLabel = UILabel().then{
         $0.textColor = .black
         $0.text = "2021-11-24"
+        $0.dynamicFont(fontSize: 8, fontName: "AppleSDGothicNeo-Light")
     }
     let kindLabel = UILabel().then{
         $0.textColor = .black
         $0.text = "플라스틱"
+        $0.dynamicFont(fontSize: 10, fontName: "AppleSDGothicNeo-Light")
     }
     let recyclingLabel = UILabel().then{
         $0.textColor = .black
         $0.text = "분리수거 방법:"
+        $0.dynamicFont(fontSize: 10, fontName: "AppleSDGothicNeo-Light")
     }
     //MARK: - Initalizer
     

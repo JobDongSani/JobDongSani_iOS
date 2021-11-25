@@ -20,12 +20,22 @@ class MainViewController : BaseVc{
         $0.allowsSelection = false
         $0.estimatedRowHeight = 300
     }
-
+    private let  addBtn = UIButton().then{
+        $0.backgroundColor = .systemBlue
+        $0.setImage(UIImage(named: "JobDongSani_addBtn")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        $0.tintColor = .white
+        $0.addTarget(self, action: #selector(addBtnAction), for: .touchUpInside
+        )
+        $0.clipsToBounds = true
+    }
     @objc
     private func barCodePageMove(){
         print("barCodePage 이동")
     }
-    
+    @objc
+    private func addBtnAction(){
+        print("추가")
+    }
     //MARK: - Helper
     override func configure() {
         super.configure()
@@ -33,18 +43,27 @@ class MainViewController : BaseVc{
         location()
         dataSourceAndDelegate()
     }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        addBtn.layer.cornerRadius = addBtn.frame.height/2
+    }
     private func addView(){
-        [barCodePageBtn,bulletInBoardTableView].forEach{view.addSubview($0)}
+        [barCodePageBtn,bulletInBoardTableView,addBtn].forEach{view.addSubview($0)}
     }
     private func location(){
         barCodePageBtn.snp.makeConstraints{
             $0.top.equalToSuperview().offset(bounds.height/14)
             $0.right.equalToSuperview().inset(bounds.width/17.045)
         }
+        addBtn.snp.makeConstraints{
+            $0.bottom.right.equalTo(view.safeAreaLayoutGuide).inset(15)
+            $0.height.width.equalTo(55)
+        }
         bulletInBoardTableView.snp.makeConstraints{
             $0.top.equalTo(barCodePageBtn.snp.bottom).offset(bounds.height/54.1333)
             $0.left.right.bottom.equalToSuperview()
         }
+
     }
     private func dataSourceAndDelegate(){
         [bulletInBoardTableView].forEach{ $0.delegate = self ; $0.dataSource = self}
@@ -61,5 +80,7 @@ extension MainViewController: UITableViewDelegate , UITableViewDataSource{
         
     }
 
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 }

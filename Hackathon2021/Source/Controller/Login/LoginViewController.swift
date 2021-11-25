@@ -13,10 +13,10 @@ class LoginViewController : BaseVc{
     //MARK: - Properties
     private let titleLabel = UILabel().then{
         let string : NSMutableAttributedString = NSMutableAttributedString(string: "잡동사니 에  오신\n여러분 환영합니다!")
-//        $0.dynamicFont(fontSize: 20, fontName: "NotoSansKR-Bold", textStyle: .body)
+        $0.dynamicFont(fontSize: 20, fontName: "AppleSDGothicNeo-Regular", textStyle: .body)
         $0.textColor = .black
         $0.numberOfLines = 2
-//        string.setFontForText(textToFind: "잡동사니", withFont:  UIFont().dynamicFont(fontSize: 30, fontName: "NotoSansKR-Medium"))
+        string.setFontForText(textToFind: "잡동사니", withFont:  UIFont().dynamicFont(fontSize: 30, fontName: "AppleSDGothicNeo-Bold"))
         string.setColorForText(textToFind: "잡동사니", withColor:.JobDongSani_7471E7)
         $0.attributedText = string
     }
@@ -34,6 +34,7 @@ class LoginViewController : BaseVc{
     }
     private let noUSerBtn = UIButton().then{
         $0.setTitle("아직회원이 아니신가요?", for: .normal)
+        $0.dynamicFont(fontSize: 10, fontName: "AppleSDGothicNeo-Light")
         $0.setTitleColor(.JobDongSani_868686, for: .normal)
         $0.addTarget(self, action: #selector(noUser), for: .touchUpInside)
     }
@@ -47,7 +48,10 @@ class LoginViewController : BaseVc{
         print("Login")
         navigationController?.pushViewController(TabbarViewController(), animated: true)
     }
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
     
     //MARK: - Helper
     override func configure() {

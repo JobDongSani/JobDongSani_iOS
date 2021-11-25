@@ -5,4 +5,8 @@
 //  Created by Ji-hoon Ahn on 2021/11/25.
 //
 
-import Foundation
+import UIKit
+
+class BarcodeViewController{
+    
+}
