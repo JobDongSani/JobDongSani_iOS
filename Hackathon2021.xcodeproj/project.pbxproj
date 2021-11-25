@@ -45,6 +45,7 @@
 		EEBCCEEF274F5598003B6054 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEEE274F5598003B6054 /* SignIn.swift */; };
 		EEBCCEF1274F5EAC003B6054 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEF0274F5EAC003B6054 /* SignUp.swift */; };
 		EEBCCEF3274F7C5B003B6054 /* TrashShareBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEF2274F7C5B003B6054 /* TrashShareBoard.swift */; };
+		EEBCCEF6274FEE8F003B6054 /* AddTrashShareBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCEF5274FEE8F003B6054 /* AddTrashShareBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		EEBCCEEE274F5598003B6054 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		EEBCCEF0274F5EAC003B6054 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		EEBCCEF2274F7C5B003B6054 /* TrashShareBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashShareBoard.swift; sourceTree = "<group>"; };
+		EEBCCEF5274FEE8F003B6054 /* AddTrashShareBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTrashShareBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +138,7 @@
 		EE869E83274A376B00B2A169 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EEBCCEF2274F7C5B003B6054 /* TrashShareBoard.swift */,
+				EEBCCEF4274FEE77003B6054 /* Board */,
 				EEBCCEED274F5586003B6054 /* Sign */,
 			);
 			path = Model;
@@ -384,6 +386,15 @@
 			path = Sign;
 			sourceTree = "<group>";
 		};
+		EEBCCEF4274FEE77003B6054 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				EEBCCEF2274F7C5B003B6054 /* TrashShareBoard.swift */,
+				EEBCCEF5274FEE8F003B6054 /* AddTrashShareBoard.swift */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -509,6 +520,7 @@
 				EE9FBB6327496ECA00667B41 /* AppDelegate.swift in Sources */,
 				EE869E89274A37B300B2A169 /* BaseVc.swift in Sources */,
 				EEBCCEE7274F1C64003B6054 /* BarcodeViewController.swift in Sources */,
+				EEBCCEF6274FEE8F003B6054 /* AddTrashShareBoard.swift in Sources */,
 				EEBCCED6274E8C52003B6054 /* SearchViewController.swift in Sources */,
 				EEBCCEE1274F1347003B6054 /* CustomSearchTF.swift in Sources */,
 				EEBCCEEA274F2604003B6054 /* AddBulletinViewController.swift in Sources */,

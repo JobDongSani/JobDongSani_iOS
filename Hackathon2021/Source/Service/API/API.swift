@@ -28,6 +28,7 @@ class API<D : Decodable>{
                 guard let statusCode = response.response?.statusCode else {return}
                 print(statusCode)
                 guard let value = response.data else { return }
+                print("value : \(value)")
                 let networkResult = self.judgeStatus(by: statusCode, value, JSONDecodeUsingStatus)
                 completion(networkResult)
             case.failure(let err):

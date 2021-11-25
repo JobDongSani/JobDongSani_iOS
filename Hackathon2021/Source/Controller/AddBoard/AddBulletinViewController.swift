@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import KeychainSwift
 class AddBulletinViewController : BaseVc{
     private let imagePicker = UIImagePickerController()
 
@@ -63,7 +64,7 @@ class AddBulletinViewController : BaseVc{
     }
     @objc
     private func addBulletinBtnAction(){
-        navigationController?.popViewController(animated: true)
+        httpsAddBoard()
     }
     override func configure() {
         super.configure()
@@ -103,6 +104,29 @@ class AddBulletinViewController : BaseVc{
             $0.left.right.equalToSuperview().inset(20)
             $0.height.equalTo(bounds.height/17.27)
         }
+    }
+    private func httpsAddBoard(){
+//        let param : Parameters = [ "title" : titleLabelTf.tf.text ?? "",
+//                                   "contents" : contentLabelTf.tf.text ?? "" ,
+//                                   "location": locationLabelTf.tf.text ?? "",
+//                                   "contact" : phoneLabelTf.tf.text ?? ""]
+//        let header : HTTPHeaders = ["Autorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4IiwiaWF0IjoxNjM3ODU5MjgzfQ.tbMFKlyp_8N0Kg9UxYM1NewlWWICFDa0Q0alDAazC8ylNvVh7v7oOEeDG6W6_-sJqzy6K8tf53zLTTMZ2j14Ng"]
+//        print(KeychainSwift().get("token") ?? "")
+//        AddTrashShareBoardAPI.shared.Request(url: "/trash-share-board", method: .post, param: param, header: header, JSONDecodeUsingStatus: false) { (response) in
+//            switch response{
+//            case .success(let value):
+//                print(value)
+//                self.navigationController?.popViewController(animated: true)
+//            case .requestErr(let error):
+//                print(error)
+//            case .pathErr:
+//                print("PathErr")
+//            case .serverErr:
+//                print("ServerErr")
+//            case .networkFail:
+//                print("NetworkFail")
+//            }
+//        }
     }
     private func imagePickerSetting(){
         self.imagePicker.sourceType = .photoLibrary

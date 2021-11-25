@@ -52,23 +52,20 @@ class MainViewController : BaseVc{
         addBtn.layer.applySketchShadow(color: .black, alpha: 0.25, x: 1, y: 1, blur: 4, spread: 0)
     }
     private func searchTrashdata(){
-//        trashShareBoardAPI.shared.Request(url: "/trash-share-board", method: .get, param: nil, header: nil, JSONDecodeUsingStatus: true) { (response) in
-//            switch response{
-//            case.success(let value):
-//                print(value)
-//                self.trashdata = value as! [trashShareBoardData]
-//                self.bulletInBoardTableView.reloadData()
-//            case.requestErr(let err):
-//                print(err)
-//            case.pathErr:
-//                print("pathErr")
-//            case.networkFail:
-//                print("networkFail")
-//            case.serverErr:
-//                print("serverErr")
-//
-//            }
-//        }
+        trashShareBoardAPI.shared.Request(url: "/trash-share-board", method: .get, param: nil, header: nil, JSONDecodeUsingStatus: true) { (response) in
+            switch response{
+            case.success(let value):
+                print(value)
+            case.requestErr(let err):
+                print(err)
+            case.pathErr:
+                print("pathErr")
+            case.networkFail:
+                print("networkFail")
+            case.serverErr:
+                print("serverErr")
+            }
+        }
     }
     
     private func addView(){
