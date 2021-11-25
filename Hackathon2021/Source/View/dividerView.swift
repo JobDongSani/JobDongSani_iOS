@@ -21,6 +21,7 @@ class dividerView : UIView{
         super.init(frame: .zero)
         label.text = titleString
         addView()
+        label.sizeToFit()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -35,11 +36,13 @@ class dividerView : UIView{
         }
         view.snp.makeConstraints{
             $0.left.equalToSuperview()
+            $0.centerY.equalToSuperview()
             $0.right.equalTo(label.snp.left).inset(-11)
             $0.height.equalTo(1)
         }
         view2.snp.makeConstraints{
             $0.right.equalToSuperview()
+            $0.centerY.equalToSuperview()
             $0.left.equalTo(label.snp.right).offset(11)
             $0.height.equalTo(1)
         }

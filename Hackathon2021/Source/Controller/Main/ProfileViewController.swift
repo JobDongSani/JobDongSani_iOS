@@ -9,6 +9,7 @@ import UIKit
 
 class ProfileViewController : BaseVc{
     //MARK: - Properties
+    private let dummy : [String] = ["물품이름","물품이름","물품이름","물품이름","물품이름","물품이름"]
     private let pageTitle = UILabel().then{
         $0.text = "프로필"
         $0.textColor = .black
@@ -35,7 +36,9 @@ class ProfileViewController : BaseVc{
     
     private let listTableView = UITableView().then{
         $0.backgroundColor = .clear
-        $0.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellReuseIdentifier: <#T##String#>)
+        $0.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.identifier)
+        $0.showsVerticalScrollIndicator = false
+        $0.separatorColor = .clear
     }
     
     
@@ -51,22 +54,25 @@ class ProfileViewController : BaseVc{
         addView()
         location()
         imagePickerSetting()
+        dataSourseAndDelegate()
         profilebtn.layer.cornerRadius = profilebtn.frame.height/2
-
+        listTableView.contentInset = UIEdgeInsets(top: 22, left: 0, bottom: 0, right: 0)
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         profilebtn.layer.cornerRadius = profilebtn.frame.height/2
     }
     
-    
+    private func dataSourseAndDelegate(){
+        [listTableView].forEach{ $0.delegate = self; $0.dataSource = self}
+    }
     private func imagePickerSetting(){
         self.imagePicker.sourceType = .photoLibrary
         self.imagePicker.allowsEditing = true
         self.imagePicker.delegate = self
     }
     private func addView(){
-        [pageTitle,profilebtn,divider,titleLabel,userName,dividerListView].forEach{ view.addSubview($0)}
+        [pageTitle,profilebtn,divider,titleLabel,userName,dividerListView,listTableView].forEach{ view.addSubview($0)}
     }
     private func location(){
         pageTitle.snp.makeConstraints{
@@ -94,6 +100,11 @@ class ProfileViewController : BaseVc{
         dividerListView.snp.makeConstraints{
             $0.top.equalTo(profilebtn.snp.bottom).offset(bounds.height/13)
             $0.left.right.equalToSuperview().inset(bounds.width/17.045)
+            $0.height.equalTo(dividerListView.label.frame.height)
+        }
+        listTableView.snp.makeConstraints{
+            $0.top.equalTo(dividerListView.snp.bottom)
+            $0.right.left.bottom.equalToSuperview()
         }
     }
 }
@@ -111,3 +122,17 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             )
         }
     }
+extension ProfileViewController : UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dummy.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as? ListTableViewCell else {return UITableViewCell()}
+        cell.titleLabel.text = dummy[indexPath.row]
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return bounds.height/6.82
+    }
+}
