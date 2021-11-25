@@ -7,48 +7,58 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
-struct API{
-    
-    static let shared = API()
-    
-    func getKakaoInfo(Parameters param : Parameters,completion : @escaping (NetworkResult<Any>) -> Void){
-        let URL  = ""
-        let header : HTTPHeaders = [ "" : ""]
+//MARK: - API Service !
+class API<T : Decodable>{
 
-        let dataRequest = AF.request(URL, method: .get, parameters: param, encoding: URLEncoding.queryString, headers: header)
+    //MARK: - Request Method
+    func Request(url : String ,method : HTTPMethod, param : Parameters?, header : HTTPHeaders?,JSONDecodeUsingStatus: Bool,completion: @escaping(NetworkResult<Any>) ->  Void){
+        let dataRequest = AF.request("\(BaseURL.baseURL)\(url)",
+                                     method: method,
+                                     parameters: param,
+                                     encoding: JSONEncoding.default,
+                                     headers: header)
         
-        dataRequest.responseData { dataResponse in
-            switch dataResponse.result{
-            case .success(let success) :
-                guard let statusCode = dataResponse.response?.statusCode else {return}
-                print(statusCode)
-                guard let value = dataResponse.value else {return}
-                let networkResult = self.judgeStatus(by: statusCode, value)
-                print(success)
+        dataRequest.responseJSON { (response) in
+            switch response.result{
+            case.success(let success):
+                NSLog("Success : \(success)")
+                guard let statusCode = response.response?.statusCode else {return}
+                guard let data = response.data else { return }
+                let networkResult = self.judgeStatus(by: statusCode, data, JSONDecodeUsingStatus)
                 completion(networkResult)
             case.failure(let err):
-                print(err.localizedDescription)
+                NSLog("Fail : \(err.localizedDescription)")
                 completion(.pathErr)
             }
         }
     }
-    //MARK: - StatusCode를 바탕으로 결과값 처리
-    private func judgeStatus(by  statusCode : Int, _ data : Data) -> NetworkResult<Any>{
+    //MARK: - Data Request Status
+    private func judgeStatus(by  statusCode : Int, _ data : Data, _ JSONDecodeUsingStatus: Bool) -> NetworkResult<Any>{
         switch statusCode{
-        case 200 : return isValidData(data: data)
+        case 200 : return methodStatus( data: data, JSONDecodeUsingStatus: JSONDecodeUsingStatus)
         case 400: return .pathErr
         case 500: return .serverErr
         default: return .networkFail
         }
     }
-    //MARK: - 200대 이하로 떨어질때 데이터 가공
-    private func isValidData(data : Data) -> NetworkResult<Any>{
+    //MARK: - Method Type
+    private func methodStatus( data : Data, JSONDecodeUsingStatus: Bool) -> NetworkResult<Any>{
+        switch JSONDecodeUsingStatus{
+        case true:
+            return isValidData(data)
+        default:
+            return .success(data)
+        }
+    }
+    //MARK: - JSONDecoder
+    private func isValidData(_ data : Data) -> NetworkResult<Any>{
         let decoder = JSONDecoder()
-//        guard let dataDecoder = try? decoder.decode(, from: data) else {return .pathErr}
-//        print(dataDecoder.documents)
-//        return .success(dataDecoder.documents)
-        return .success(data)
+        guard let dataDecoder = try? decoder.decode(T.self, from: data) else {return .pathErr}
+        print(dataDecoder)
+        return .success(dataDecoder)
     }
 }
+
 

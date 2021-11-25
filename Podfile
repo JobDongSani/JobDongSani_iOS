@@ -12,16 +12,7 @@ target 'Hackathon2021' do
   pod 'Then'
 
   # Networking
-  pod 'Moya/RxSwift'
-
-  #Rx
-  pod 'RxSwift'
-  pod 'RxCocoa'
-
-  #RxFramework
-  pod 'RxFlow'
-  pod 'RxViewController'
-  pod 'ReactorKit'
- 
+  pod 'Alamofire', '~> 5.2'
+  pod 'KeychainSwift', '~> 19.0'
 
 end

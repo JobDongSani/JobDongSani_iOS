@@ -20,6 +20,7 @@
 		EEAF534A274B0C7F0063D99A /* NetworkingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAF5349274B0C7F0063D99A /* NetworkingStatus.swift */; };
 		EEAF534D274B0CA80063D99A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAF534C274B0CA80063D99A /* API.swift */; };
 		EEAF534F274B0DAC0063D99A /* BaseModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAF534E274B0DAC0063D99A /* BaseModal.swift */; };
+		EEBCCE8F274DB3F4003B6054 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBCCE8E274DB3F4003B6054 /* BaseURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		EEAF5349274B0C7F0063D99A /* NetworkingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingStatus.swift; sourceTree = "<group>"; };
 		EEAF534C274B0CA80063D99A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		EEAF534E274B0DAC0063D99A /* BaseModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModal.swift; sourceTree = "<group>"; };
+		EEBCCE8E274DB3F4003B6054 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		EE869E85274A378900B2A169 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				EEBCCE8D274DB3E2003B6054 /* BaseURL */,
 				EEAF534B274B0C9B0063D99A /* API */,
 			);
 			path = Service;
@@ -203,6 +206,14 @@
 				EEAF534C274B0CA80063D99A /* API.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		EEBCCE8D274DB3E2003B6054 /* BaseURL */ = {
+			isa = PBXGroup;
+			children = (
+				EEBCCE8E274DB3F4003B6054 /* BaseURL.swift */,
+			);
+			path = BaseURL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +340,7 @@
 				EE869E8B274A387600B2A169 /* MainViewController.swift in Sources */,
 				EEAF534D274B0CA80063D99A /* API.swift in Sources */,
 				EE869E8F274A399300B2A169 /* BaseCollectionViewCell.swift in Sources */,
+				EEBCCE8F274DB3F4003B6054 /* BaseURL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
