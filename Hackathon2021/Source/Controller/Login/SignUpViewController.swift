@@ -68,6 +68,7 @@ class SignUpViewController :BaseVc {
     private func addView(){
         [profile,stackView,joinBtn,alreadyAccoutBtn].forEach{ view.addSubview($0)}
     }
+    
     private func location(){
         profile.snp.makeConstraints{
             $0.centerX.equalToSuperview()
@@ -89,6 +90,10 @@ class SignUpViewController :BaseVc {
             $0.centerX.equalToSuperview()
             $0.height.width.equalTo(alreadyAccoutBtn.titleLabel!)
         }
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
 }
 extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{

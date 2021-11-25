@@ -14,8 +14,10 @@ class CustomSearchTF: UIView{
     let searchBar = UISearchBar().then{
         $0.searchBarStyle = .minimal
     }
+
     let searchBtn = UIButton().then{
         $0.setTitle("검색", for: .normal)
+        $0.dynamicFont(fontSize: 15, fontName: "AppleSDGothicNeo-Regular")
         $0.setTitleColor(.systemBlue, for: .normal)
     }
     override init(frame: CGRect) {
@@ -35,7 +37,7 @@ class CustomSearchTF: UIView{
         }
         searchBtn.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.right.equalToSuperview().inset(18)
+            $0.right.equalToSuperview().inset(8)
             $0.width.height.equalTo(snp.height)
         }
         searchBar.snp.makeConstraints{
@@ -43,6 +45,5 @@ class CustomSearchTF: UIView{
             $0.left.right.equalToSuperview().inset(10)
             $0.height.equalToSuperview()
         }
-        
     }
 }

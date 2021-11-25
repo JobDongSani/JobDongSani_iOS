@@ -9,12 +9,17 @@ import UIKit
 
 class SearchViewController : BaseVc{
 
-    private let searchBar = CustomSearchTF()
+    private let searchBar = CustomSearchTF().then{
+        $0.searchBtn.addTarget(self, action: #selector(searchAction), for: .touchUpInside)
+    }
     private let search_table = UITableView().then{
         $0.backgroundColor = .clear
         $0.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
         $0.showsVerticalScrollIndicator = false
         $0.separatorColor = .clear
+    }
+    @objc private func searchAction(){
+        print("검색")
     }
     override func configure() {
         super.configure()
@@ -23,12 +28,18 @@ class SearchViewController : BaseVc{
         addView()
         location()
     }
+
+    
     private func tableViewSetting(){
         [search_table].forEach{ $0.delegate = self; $0.dataSource = self}
 
     }
     private func searchSetting(){
-
+        
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     private func addView(){
         [searchBar,search_table].forEach{ view.addSubview($0)}
@@ -54,6 +65,7 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell  = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else{return UITableViewCell()}
+        cell.selectionStyle = .none
         return cell
     }
     

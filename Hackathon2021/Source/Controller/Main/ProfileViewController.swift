@@ -129,6 +129,7 @@ extension ProfileViewController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as? ListTableViewCell else {return UITableViewCell()}
+        cell.selectionStyle = .none
         cell.titleLabel.text = dummy[indexPath.row]
         return cell
     }
